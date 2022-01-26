@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/laperla/static/css/main.049ab406.css",
-    "main.js": "/laperla/static/js/main.e97ff622.js",
+    "main.js": "/laperla/static/js/main.934aeac0.js",
     "static/js/787.da4d2ca7.chunk.js": "/laperla/static/js/787.da4d2ca7.chunk.js",
-    "static/media/laperlapromo.mp4": "/laperla/static/media/laperlapromo.1fffc21ae20c9b51c559.mp4",
+    "static/media/laperlapromo.mp4": "/laperla/static/media/laperlapromo.e9177f1eead937c33a8b.mp4",
     "index.html": "/laperla/index.html",
     "main.049ab406.css.map": "/laperla/static/css/main.049ab406.css.map",
-    "main.e97ff622.js.map": "/laperla/static/js/main.e97ff622.js.map",
+    "main.934aeac0.js.map": "/laperla/static/js/main.934aeac0.js.map",
     "787.da4d2ca7.chunk.js.map": "/laperla/static/js/787.da4d2ca7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.049ab406.css",
-    "static/js/main.e97ff622.js"
+    "static/js/main.934aeac0.js"
   ]
 }
