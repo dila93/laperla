@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/laperla/static/css/main.bbefad94.css",
-    "main.js": "/laperla/static/js/main.934aeac0.js",
+    "main.css": "/laperla/static/css/main.31bad83b.css",
+    "main.js": "/laperla/static/js/main.52e6877f.js",
     "static/js/787.da4d2ca7.chunk.js": "/laperla/static/js/787.da4d2ca7.chunk.js",
     "static/media/laperlapromo.mp4": "/laperla/static/media/laperlapromo.e9177f1eead937c33a8b.mp4",
     "index.html": "/laperla/index.html",
-    "main.bbefad94.css.map": "/laperla/static/css/main.bbefad94.css.map",
-    "main.934aeac0.js.map": "/laperla/static/js/main.934aeac0.js.map",
+    "main.31bad83b.css.map": "/laperla/static/css/main.31bad83b.css.map",
+    "main.52e6877f.js.map": "/laperla/static/js/main.52e6877f.js.map",
     "787.da4d2ca7.chunk.js.map": "/laperla/static/js/787.da4d2ca7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbefad94.css",
-    "static/js/main.934aeac0.js"
+    "static/css/main.31bad83b.css",
+    "static/js/main.52e6877f.js"
   ]
 }
