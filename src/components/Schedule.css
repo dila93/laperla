@@ -1,0 +1,30 @@
+.day-schedule {
+  color: white;
+  border: 5px #ff000052 solid;
+  padding: 10px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.hour {
+  color: white;
+  text-decoration: overline red;
+  text-decoration-color: red;
+}
+
+p {
+  margin: 0;
+}
+.hour-list {
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 15px;
+  opacity: 0.3;
+  width: 25vh;
+  font-weight: 600;
+}
