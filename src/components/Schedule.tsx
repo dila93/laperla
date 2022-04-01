@@ -17,8 +17,14 @@ interface DayData {
   todaySchedule: string[];
 }
 
+enum IsClass {
+  LAZY = "lazy",
+  TRUE = "true",
+  FALSE = "false",
+}
+
 interface TodaySchedule {
-  isThereClass: boolean;
+  isThereClass: IsClass;
   morning: string[];
   afternoon: string[];
 }
@@ -36,7 +42,7 @@ const Schedule = () => {
   });
 
   const [todaySchedule, setTodaySchedule] = useState<TodaySchedule>({
-    isThereClass: false,
+    isThereClass: IsClass.LAZY,
     morning: [],
     afternoon: [],
   });
@@ -138,7 +144,13 @@ const Schedule = () => {
         }
 
         if (morning.length && afternoon.length) {
-          setTodaySchedule({ isThereClass: true, morning, afternoon });
+          setTodaySchedule({ isThereClass: IsClass.TRUE, morning, afternoon });
+        } else {
+          setTodaySchedule({
+            isThereClass: IsClass.FALSE,
+            morning: [],
+            afternoon: [],
+          });
         }
       }
     };
@@ -146,16 +158,31 @@ const Schedule = () => {
   }, [dayData.index]);
 
   const printHourInfo = () => {
-    if (todaySchedule.isThereClass) {
+    //todaySchedule.isThereClass
+    if (todaySchedule.isThereClass === IsClass.TRUE) {
       return (
         <div className="hour-list">
           <Hour today={todaySchedule.morning} />
           <Hour today={todaySchedule.afternoon} />
         </div>
       );
-    } else {
+    } else if (todaySchedule.isThereClass === IsClass.FALSE) {
       return <div className="no-class">No hay clase hoy</div>;
+    } else if (todaySchedule.isThereClass === IsClass.LAZY) {
+      return (
+        <div className="hour-list">
+          <HourLazy />
+          <HourLazy />
+        </div>
+      );
     }
+
+    /*return (
+      <div className="hour-list">
+        <HourLazy />
+        <HourLazy />
+      </div>
+    );*/
   };
 
   return (
@@ -177,6 +204,17 @@ const Hour = (props: HourProps) => {
           {hour}
         </p>
       ))}
+    </div>
+  );
+};
+
+const HourLazy = () => {
+  return (
+    <div>
+      <p className="hour-lazy"></p>
+      <p className="hour-lazy"></p>
+      <p className="hour-lazy"></p>
+      <p className="hour-lazy"></p>
     </div>
   );
 };

@@ -12,6 +12,13 @@
   text-decoration-color: red;
 }
 
+.hour-lazy {
+  width: 80px;
+  height: 15px;
+  margin: 5px;
+  background-color: red;
+}
+
 .no-class {
   color: #ffffff82;
   display: flex;
