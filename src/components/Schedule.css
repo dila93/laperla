@@ -12,6 +12,19 @@
   text-decoration-color: red;
 }
 
+.no-class {
+  color: #ffffff82;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  height: 100px;
+  width: 153px;
+  font-size: 1.5em;
+}
+
 p {
   margin: 0;
 }

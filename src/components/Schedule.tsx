@@ -18,6 +18,7 @@ interface DayData {
 }
 
 interface TodaySchedule {
+  isThereClass: boolean;
   morning: string[];
   afternoon: string[];
 }
@@ -35,6 +36,7 @@ const Schedule = () => {
   });
 
   const [todaySchedule, setTodaySchedule] = useState<TodaySchedule>({
+    isThereClass: false,
     morning: [],
     afternoon: [],
   });
@@ -126,7 +128,7 @@ const Schedule = () => {
         let morning: string[] = [];
         let afternoon: string[] = [];
         for (let i = 0; i < schedule.length; i++) {
-          if (schedule[i].row[dayData.index].toLowerCase() === "true") {
+          if (schedule[i].row[dayData.index - 1].toLowerCase() === "true") {
             if (schedule[i].row[1].includes("a.m")) {
               morning.push(schedule[i].row[1]);
             } else if (schedule[i].row[1].includes("p.m")) {
@@ -135,32 +137,47 @@ const Schedule = () => {
           }
         }
 
-        setTodaySchedule({ morning, afternoon });
+        if (morning.length && afternoon.length) {
+          setTodaySchedule({ isThereClass: true, morning, afternoon });
+        }
       }
     };
     schedulng();
   }, [dayData.index]);
 
+  const printHourInfo = () => {
+    if (todaySchedule.isThereClass) {
+      return (
+        <div className="hour-list">
+          <Hour today={todaySchedule.morning} />
+          <Hour today={todaySchedule.afternoon} />
+        </div>
+      );
+    } else {
+      return <div className="no-class">No hay clase hoy</div>;
+    }
+  };
+
   return (
     <>
       <h1 className="day-schedule">{dayData.today}</h1>
-      <div className="hour-list">
-        <div className="hour-list-morning">
-          {todaySchedule.morning.map((hour, index) => (
-            <p key={index} className="hour">
-              {hour}
-            </p>
-          ))}
-        </div>
-        <div className="hour-list-afternoon">
-          {todaySchedule.afternoon.map((hour, index) => (
-            <p key={index} className="hour">
-              {hour}
-            </p>
-          ))}
-        </div>
-      </div>
+      {printHourInfo()}
     </>
+  );
+};
+
+type HourProps = {
+  today: string[];
+};
+const Hour = (props: HourProps) => {
+  return (
+    <div>
+      {props.today.map((hour, index) => (
+        <p key={index} className="hour">
+          {hour}
+        </p>
+      ))}
+    </div>
   );
 };
 
