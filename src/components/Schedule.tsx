@@ -143,7 +143,7 @@ const Schedule = () => {
           }
         }
 
-        if (morning.length && afternoon.length) {
+        if (morning.length || afternoon.length) {
           setTodaySchedule({ isThereClass: IsClass.TRUE, morning, afternoon });
         } else {
           setTodaySchedule({
